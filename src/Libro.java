@@ -1,6 +1,10 @@
+import java.util.Random;
+
 public class Libro {
 
     /*Atributos*/
+
+    Random random = new Random();
     private Integer id;
     private String titulo;
     private String autor;
@@ -8,13 +12,14 @@ public class Libro {
 
     /*Constructor*/
     public Libro(Integer id, String titulo, String autor, Integer numeroPagina) {
-        this.id = id;
+        this.id = 0;
+        this.random.nextInt(101);
         this.titulo = titulo;
         this.autor = autor;
         this.numeroPagina = numeroPagina;
     }
 
-    /*Metodos*/
+    /*Metodos, set y get*/
 
     public Integer getId() {
         return id;
@@ -46,5 +51,17 @@ public class Libro {
 
     public void setNumeroPagina(Integer numeroPagina) {
         this.numeroPagina = numeroPagina;
+    }
+
+    /*ToString*/
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", numeroPagina=" + numeroPagina +
+                '}';
     }
 }
